@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGO_CONNECTION,
     .then((result) => {
         console.log("MongoDB connected");
     }).catch((err) => {
-        console.error(err.message)
+        console.error("mongo error :" + err.message)
 });
 
 
