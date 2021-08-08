@@ -3,18 +3,22 @@ const mongoose = require('mongoose');
 let quotesSchema = new mongoose.Schema({
     title: {
         type: String,
-        required : true,
+        required: true,
     },
     quote: {
         type: String,
-        required : true
+        required: true
     },
-    uid: {
+    picture: {
         type: String,
         default: null,
-        required : false
+        required: false
     }
-})
+},
+    {
+        timestamps: true
+    }
+)
 
 const quoteModal = new mongoose.model('Quote', quotesSchema)
 

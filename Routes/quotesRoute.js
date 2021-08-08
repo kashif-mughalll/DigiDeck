@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { getQuotes, addNewQuote } = require('../Controllers/quotesControllers');
+const { getQuotes, addNewQuote, updateQuote, deleteQuote } = require('../Controllers/quotesControllers');
 
-
-router.route("/").get(getQuotes).post(addNewQuote)
+router.route("/:id")
+    .get(getQuotes)
+    .post(addNewQuote)
+    .put(updateQuote)
+    .delete(deleteQuote)
 
 module.exports = router;
